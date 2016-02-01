@@ -1,7 +1,17 @@
 from SocketServer import ThreadingTCPServer, StreamRequestHandler
 
 
-class dataServer(StreamRequestHandler):
+class dataServer():
+
+    def __init__(self, serv_host, serv_port):
+        self.host = serv_host
+        self.port = serv_port
+        self.addr = (serv_host, serv_port)
+        self.server = ThreadingTCPServer(self.addr, RequestHandler)
+        self.server.serve_forever()
+
+
+class RequestHandler(StreamRequestHandler):
 
     def handle(self):
         while True:
@@ -12,8 +22,4 @@ class dataServer(StreamRequestHandler):
 
 if __name__ == "__main__":
     print 'server is running....'
-    host = '127.0.0.1'
-    port = 1234
-    addr = (host, port)
-    server = ThreadingTCPServer(addr, dataServer)
-    server.serve_forever()
+    data_server = dataServer('127.0.0.1', 1234)
