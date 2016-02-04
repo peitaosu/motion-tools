@@ -11,3 +11,7 @@ motion-tools
 
 	Monitor formated output of Leap Motion.
 
+* data-visual 0.0.1
+
+	Tool for data visualization.
+

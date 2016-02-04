@@ -9,7 +9,7 @@ version: 0.0.1
 * Open your system terminal
     
     ```
-    python data-monitor.py
+    python dataMonitor.py
     ```
     
 **HOW TO CUSTOMIZE**
